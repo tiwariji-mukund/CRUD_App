@@ -1,5 +1,5 @@
 let designcl = ['Personal', 'Work', 'School', 'Cleaning', 'Other'] //creating class for implementing design to different category 
-$(document).ready(function() {
+$(document).ready(function () {
 
     let categorys = document.getElementsByClassName('catesec'); // getting all the class name category 
     for (let i = 0; i < categorys.length; i++) { // looping in the  categorys to find the which categry class belongs and implement according sesign check home.css to get the color of eact section
@@ -45,7 +45,7 @@ function checkedOrNot() {
 }
 
 // this addEventListener  come into action when we clicked on delete button after we checked which list of items need to be deleted
-document.getElementById('deleteButton').addEventListener('click', function() {
+document.getElementById('deleteButton').addEventListener('click', function () {
     let checedvaluew = document.querySelectorAll('.delechack:checked') // getting only checked vale
     let arrcheck = [] // creating the lsit of checked array
     for (let i of checedvaluew) {
@@ -62,15 +62,15 @@ document.getElementById('deleteButton').addEventListener('click', function() {
     //here we are making delete request with the help of Ajax request 
     $.ajax({
         type: 'post',
-        url: '/delete_todo/?id=' + arrcheck,
-        success: function() { // on ajax sunnces i.e when data is delete
+        url: '/user/delete_todo/?id=' + arrcheck,
+        success: function () { // on ajax sunnces i.e when data is delete
             swal("Item is deleted ", "click ok to go back Home ", "success") // using sweet alert to show the data is delete
                 .then(redir => {
-                    window.location = '/';
+                    window.location = '/user/app';
                 })
 
         },
-        error: function(err) {
+        error: function (err) {
             console.log(err);
         }
 
