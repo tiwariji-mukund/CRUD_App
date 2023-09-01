@@ -1,7 +1,5 @@
 # ToDo_App
 
-It is  Coding Ninjas Major project assignment. Please do visit the Coding Ninjas website [CodingNinjas ](https://www.codingninjas.com/) for more details.
-
 ## Table of contents
 
 - [Overview](#overview)
@@ -24,7 +22,8 @@ It is a simple TODO application using NodeJS and MongDB. where a user of this ap
 
 ## My process
 
-ToDo application is based on NodeJs and express as server side technology, MongoDb for Data-Base,and ejs fro front-end.  
+ToDo application is based on NodeJs and express as server side technology, MongoDb for Data-Base,and ejs fro front-end.
+
 ### Built with
 
 - HTML
@@ -35,6 +34,7 @@ ToDo application is based on NodeJs and express as server side technology, Mongo
 - express
 - MongoDB
 - ejs
+
 ### Useful resources
 
 - [MongoDb](https://mongoosejs.com/)
@@ -42,4 +42,4 @@ ToDo application is based on NodeJs and express as server side technology, Mongo
 
 ## Author
 
-- LinkedIn - [Ayush sahu](https://www.linkedin.com/in/iayushsahu/)
+- LinkedIn - [Ayush sahu](https://www.linkedin.com/in/mukund-jee-tiwari/)

@@ -3,7 +3,7 @@ const TodoLists = require('../models/todo_list')
 module.exports.home = function (req, res) { // fetching using mongoose
     TodoLists.find({}, function (err, todo) {
         if (err) {
-            console.log('error in fetching data');
+            req.flash('error');
             return
         }
 
@@ -71,16 +71,16 @@ module.exports.createTodo = function (req, res) {
     dueDate = req.body.dateValue.split('-'); // splitting date and taking montha value
     let newdate = '';
     newdate = DateValeu(dueDate);
-    TodoLists.create({ // crating new todo and storing into DB
+    TodoLists.create({ // creating new todo and storing into DB
         desc: req.body.desc,
         category: req.body.category,
         dueDate: newdate
     }, function (err, newArr) {
         if (err) {
-            console.log('Oops error occoured');
+            req.flash('error');
             return;
         }
-        return res.redirect('/')
+        return res.redirect('/user/app')
     })
 }
 // function for deleting todo list
@@ -90,19 +90,19 @@ module.exports.deleteTodo = function (req, res) {
     for (let i = 0; i < newsp.length; i++) { // looping over newsp  to delete all the checked value
         TodoLists.findByIdAndDelete(newsp[i], function (err) {
             if (err) {
-                console.log('err')
+                req.flash('error');
                 return;
             }
         })
     }
-    return res.redirect('/');
+    return res.redirect('/user/app');
 }
 // function for fetching data for edit page
 module.exports.EditPage = function (req, res) { // here we are fetching the data whic need to be edited
 
     TodoLists.findById(req.query.id, function (err, todoLists) {
         if (err) {
-            console.log('hi man!! it an error');
+            req.flash('error');
             return
         }
         return res.render('editPage', {
@@ -126,7 +126,7 @@ module.exports.editDetails = function (req, res) {
         }
     }, function (err, todoData) {
         if (err) {
-            console.log('error while updating');
+            req.flash('error');
             return;
         }
         return res.redirect('/user/app')

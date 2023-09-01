@@ -13,13 +13,13 @@ passport.use(new LocalStrategy({
             const user = await User.findOne({ email: email });
             if (!user || user.password != password) {
                 // req.flash('error', 'Invalid Username/Password');
-                console.log('invalid email/password');
+                req.flash('error', 'Invalid Username/Password');
                 return done(null, false);
             }
             return done(null, user);
         } catch (err) {
             // req.flash('error', err);
-            console.log('Error in finding user');
+            req.flash('error');
             return done(err);
         }
     }
@@ -31,14 +31,13 @@ passport.serializeUser((user, done) => {
 });
 
 // when browser makes a request with that id find the user in the db and print its details
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (req, id, done) => {
     try {
         const user = await User.findById(id);
         return done(null, user);
 
     } catch (err) {
-        // req.flash('error', err);
-        console.log('Error in finding user', err);
+        req.flash('error');
         return done(err);
     }
 });
