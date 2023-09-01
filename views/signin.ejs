@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/user.css" />
+<div class="container">
+  <h1 id="heading">Sign In</h1>
+  <form method="post" action="/create-session">
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="emailInput"
+        aria-describedby="emailHelp"
+        placeholder="Your Email"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="inputPassword"
+        placeholder="Your Password"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <p id="msg">Don't have an account? <a href="/signup">Click here</a></p>
+</div>

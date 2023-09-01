@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ad8a8a;
+}
+
+main {
+    height: 100%;
+    background-color: rgb(178, 137, 137);
+}
+
+#heading {
+    text-align: center;
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    position: absolute;
+    height: auto;
+    width: 40%;
+    padding: 2vw;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 25px;
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    position: relative;
+    left: 40%;
+    width: 8vw;
+    height: 3vw;
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+
+#msg {
+    text-align: center;
+    margin-top: 2vw;
+}

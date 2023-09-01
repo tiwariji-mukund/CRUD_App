@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/home.css" />
+<!-- Creatd a new Edit section as a part for innovation section -->
+
+<!-- Header file for TODO Application -->
+<div class="todoheading">
+  <h1 class="heading_class">TODO APPLICATION</h1>
+  <div class="d-flex d-md-flex justify-content-lg-end button">
+    <ul class="d-flex" style="list-style: none">
+      <li class="nav-item">
+        <a href="/user/app">
+          <button class="btn btn-success mx-2 mt-4" type="button">Back</button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/logout"
+          ><button class="btn btn-outline-danger mx-2 mt-4" type="button">
+            Sign Out
+          </button></a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="form_class">
+  <h2 class="color-white">EDIT YOUR DETAILS</h2>
+
+  <form
+    action="/user/edit-todolist?id=<%= todolist._id %>"
+    method="POST"
+    class="main_form"
+  >
+    <div class="desc_Class">
+      <input type="text" name="desc" value="<%= todolist.desc %>" />
+    </div>
+    <div class="select_and_input">
+      <select name="category" class="category">
+        <option value="" disabled selected><%= todolist.category %></option>
+        <option>Personal</option>
+        <option>Work</option>
+        <option>School</option>
+        <option>Cleaning</option>
+        <option>Other</option>
+      </select>
+      <input
+        type="date"
+        class="datesValues"
+        required
+        name="dueDate"
+        value="<%= todolist.dueDate %>"
+      />
+    </div>
+    <div class="editBTNwrapper">
+      <button type="submit" class="edit-button buttonDesign">Update</button>
+    </div>
+  </form>
+</div>

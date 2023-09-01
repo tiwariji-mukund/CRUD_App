@@ -1,0 +1,102 @@
+<!-- HTMl section for main home page -->
+<link rel="stylesheet" href="/css/home.css" />
+
+<!-- Header file for TODO Application -->
+<div class="todoheading">
+  <h1 class="heading_class">TODO APPLICATION</h1>
+  <div class="d-flex d-md-flex justify-content-lg-end button">
+    <ul class="d-flex" style="list-style: none">
+      <li class="nav-item">
+        <button class="btn btn-outline-primary mx-2 mt-4" type="button">
+          Hello! <%= user.name %>
+        </button>
+      </li>
+      <li class="nav-item">
+        <a href="/logout"
+          ><button class="btn btn-outline-danger mx-2 mt-4" type="button">
+            Sign Out
+          </button></a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="form_class">
+  <form action="/create_todo" method="POST" class="main_form">
+    <div class="desc_Class">
+      <input
+        type="textarea"
+        required
+        name="desc"
+        placeholder="what do you need to do"
+      />
+    </div>
+    <div class="select_and_input">
+      <select name="category" required class="category">
+        <option value="" disabled selected>Select your option</option>
+        <option>Personal</option>
+        <option>Work</option>
+        <option>School</option>
+        <option>Cleaning</option>
+        <option>Other</option>
+      </select>
+      <input
+        class="datesValues"
+        type="date"
+        name="dateValue"
+        placeholder="Due data dd/mm/yyyy"
+        required
+      />
+    </div>
+    <div class="button_wrapper">
+      <button class="buttonDesign colorGreen" id="submitButton" type="submit">
+        <i class="fa fa-plus-square"> </i> Add Task
+      </button>
+      <button class="buttonDesign colorRed" id="deleteButton" type="submit">
+        <i class="fa fa-trash-o"></i> Delete Task
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- for displaying TODO lists -->
+<div class="task_container">
+  <% for(let i of todoList) { let j=0; let newIds='descids'+j; %>
+  <div class="task_wrapper">
+    <div class="singleTask">
+      <input
+        type="checkbox"
+        name="delechack"
+        class="delechack"
+        onclick="checkedOrNot()"
+        uid="<%= i._id %>"
+      />
+      <div class="disc_and_dueDate">
+        <p id="<%= i._id %>" uid="<%= i._id %>" class="dispdsc">
+          <%= i.desc %>
+        </p>
+        <p id="<%= i._id + i.dueDate %>" class="dueDate"><%= i.dueDate %></p>
+      </div>
+      <div class="catesec"><%= i.category %></div>
+      <div class="editClass">
+        <a href="/user/editdata/?id=<%=i._id %>"
+          ><i class="fa-solid fa-pen-to-square"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+  <% j++; } %>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script
+  src="https://kit.fontawesome.com/e0d3b694ff.js"
+  crossorigin="anonymous"
+></script>
+<script src="/js/script.js"></script>
