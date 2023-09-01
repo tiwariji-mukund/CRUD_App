@@ -14,10 +14,12 @@
 
 It is a simple TODO application using NodeJS and MongDB. where a user of this application can create,edit and delete all the ToDo items .
 
-### Screenshot
-![full_screen_view](https://github.com/tiwariji-mukund/CRUD_App/assets/92503293/72e9b6e2-4885-4d08-872c-21f307153c16)
-![mobile_view](https://github.com/tiwariji-mukund/CRUD_App/assets/92503293/8eedc904-3e93-4e1d-93b5-71809031e9e3)
+## Screenshot
+
+### Home Page
 ![tablet_view](https://github.com/tiwariji-mukund/CRUD_App/assets/92503293/9e84005c-190c-4c5c-8734-76ee28d72db9)
+
+### Edit Page
 ![edit_page_view](https://github.com/tiwariji-mukund/CRUD_App/assets/92503293/c572fefd-50f7-4de1-8275-9d73cc17df0f)
 
 ### Sign In
