@@ -1,9 +1,5 @@
 # CRUD Application
-This project is a task assigned by the **MYPCOT TECHNOLOGIES** for the role of **SOFTWARE DEVELOPER**
-
-## TO DO
-
-![image](https://github.com/tiwariji-mukund/CRUD_App/assets/92503293/4e511015-a993-4476-a50a-41c9eaa38556)
+This project is a complete CRUD App alongwith the Auhtentication System.
 
 
 ## Table of contents
